@@ -1,0 +1,772 @@
+ @font-face {
+    font-family: PP mori;
+    src: url(./ppmori.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: PP mori;
+    color: #fff;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+#purple{
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    position: fixed;
+    z-index: 100;
+    background-color: #EDBFFF;
+    opacity: 0;
+    display: none;
+    transition: opacity ease 1s;
+    
+}
+.cursor{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: fixed;
+    background-color: #EDBFFF;
+    z-index: 8;
+    transition: background-image ease 0.5s;
+    background-position: center;
+    background-size:cover ;
+    mix-blend-mode: difference;
+}
+.main{
+    background-color: #0F0D0D;
+    cursor: none;
+}
+
+.page1{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 9;
+    padding-top: 12vw;
+}
+
+#nav{
+    height: 55px;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    position: fixed;
+    mix-blend-mode: difference;
+    z-index:102;
+}
+#nav img{
+    height: 57px;
+}
+#nav-part2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#nav #circle{
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+#nav h4{
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+#nav h4:nth-child(1){
+    border-bottom: 1.5px solid #fff;
+}
+
+.page1 h1{
+    font-size: 8vw;
+    font-weight: 300;
+    font-family: PP mori;
+
+    margin-left: 6vw;
+    transform-origin: left;
+}
+.page1 h2{
+    font-size: 8vw;
+    font-weight: 300;
+    transform-origin: left;
+
+    margin-left: 26vw;
+}
+
+.page1 video{
+    width: 60%;
+    margin-top: 10vw;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+.page2{
+    min-height: 80vh;
+    width: 100%;
+    padding: 100px 5vw;
+    border-bottom: 2px solid #6c6c6c;
+    position: relative;
+    z-index: 9;
+}
+
+.page2 h1{
+    font-size:7vw;
+    font-weight: 500;
+    color: #111;
+
+}
+.page2-container{
+    height: 60vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 0 5vw; */
+}
+.page2-left{
+    /* background-color: blue; */
+    width: 40%;
+}
+.page2-right{
+    /* background-color: blue; */
+    width: 24%;
+}
+.page2-left h2{
+    font-size: 4vw;
+    font-weight: 300;
+    color: #111;
+    line-height: 4vw;
+}
+.page2-right p{
+    font-size: 28px;
+    color: #111;
+}
+.page2-right button{
+    width: 100%;
+    border-radius: 50px;
+    border: none;
+    padding: 4px 0;
+    background-color: #EDBFFF;
+    color: #111;
+    margin-top: 20px;
+}
+
+.page3{
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 100px;
+    position: relative;
+    z-index: 9;
+}
+
+.page3 h1{
+    font-size: 6.8vw;
+    font-weight: 300;
+    color: #000000;
+    margin-left: 100px;
+}
+.page3-part1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 80px;
+  position: relative;
+  padding-left: -120px; /* padding so image doesn't get too close to left video */
+}
+
+/* CSS variables for easy tuning of video position */
+.page3-part1 video {
+  height: 400px;
+  order: 1;
+  flex-shrink: 0;
+
+  /* Use CSS vars to control left and top offset */
+  position: relative;
+  left: var(--video-left-offset, -120px); /* default is -100px, can be 0 for flush left */
+  top: var(--video-top-offset, 40px); /* default 40px */
+}
+
+/* Image on the right, slightly higher */
+.page3-part1 img {
+  height: 400px;
+  order: 2;
+  flex-shrink: 0;
+  margin-top: 0;
+}
+
+/* Caption below video, aligned far left */
+.page3-part1 .mobile-caption {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #000;
+
+  width: fit-content;
+  max-width: 400px;
+
+  align-self: flex-start;
+  margin-left: var(--caption-left-offset, -100px); /* align caption with video */
+  margin-right: auto;
+  position: relative;
+  top: 0;
+}
+
+
+.page4{
+    background-color: #ffffff;
+    min-height: 100vh;
+    width: 100%;
+    z-index: 9;
+    position: relative;
+    padding: 170px 100px;
+}
+.elem{
+    /* background-color: salmon; */
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.elem img {
+    position: absolute;
+    opacity: 0;
+    transition: all ease-out 0.5s;
+    transform: translateY(10%) rotate(2deg);
+    width: 250px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.elem img:nth-child(1){
+    left: 2%;
+}
+.elem img:nth-child(3){
+    right: 5%;
+}
+.text-div{
+    height: 16vh;
+    position: relative;
+    z-index: 9;
+    overflow: hidden;
+}
+.elem h1{
+    font-size: 7.5vw;
+    font-weight: 600;
+    transition: all ease-out 0.5s;
+}
+
+.elem:hover h1{
+    transform: translateY(-100%);
+    color: #EDBFFF;
+}
+.elem:hover img{
+    opacity: 1;
+    transform: translateY(0%) rotate(0deg);
+
+}
+
+.page5{
+    background-color: #000000;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 9;
+    padding: 140px 100px;
+}
+.page5 h2{
+    font-size: 4vw;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+.box{
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    padding: 0 20px;
+    border-top: 2px solid #dadada;
+}
+
+.box:nth-last-child(1){
+    border-bottom: 2px solid #dadada;
+
+}
+
+.page4 .elem h1 {
+  color: rgb(0, 0, 0) !important;
+}
+
+.page4 .elem:hover h1 {
+  color: rgb(0, 0, 0) !important;
+}
+/* MOBILE LAYOUT — CLEAN, STATIC, TOUCH-FRIENDLY */
+@media (max-width: 768px) {
+
+  /* Disable animations/transforms/hover */
+  * {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+  .elem:hover img,
+  .elem:hover h1 {
+    opacity: 1 !important;
+    transform: none !important;
+    color: inherit !important;
+  }
+/* NAV */
+#nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  padding: 10px 20px;
+  position: relative;
+  background: transparent; /* transparent header */
+}
+
+/* Logo inside nav */
+#nav img {
+  height: 40px;
+}
+
+/* Hide nav links by default on mobile */
+#nav-part2 {
+  display: none;
+  flex-direction: column;
+  background: rgba(0,0,0,0.85); /* dark dropdown */
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 10px 0;
+  width: 150px;
+  text-align: right;
+  z-index: 1000;
+}
+#nav-part2.show {
+  display: flex;
+}
+#nav-part2 h4 {
+  font-size: 14px;
+  padding: 8px 16px;
+  margin: 0;
+  cursor: pointer;
+  color: rgb(255, 254, 254);
+}
+
+/* Hamburger icon — now white and 3 lines */
+#nav-part3 {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+#circle {
+  width: 25px;
+  height: 3px;
+  background: rgb(232, 232, 232); /* main line white */
+  position: relative;
+}
+#circle::before,
+#circle::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background: rgb(255, 255, 255); /* white lines */
+  left: 0;
+}
+#circle::before {
+  top: -8px; /* top line */
+}
+#circle::after {
+  top: 8px; /* bottom line */
+}
+
+/* Third line in the middle (slightly above center) */
+#circle::after {
+  top: 8px;
+}
+#circle::before {
+  top: -8px;
+}
+/* New middle extra line */
+#circle::after,
+#circle::before,
+#circle::middle {
+  background: rgb(237, 235, 235);
+}
+#circle::middle {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background: rgb(255, 255, 255);
+  left: 0;
+  top: 0; /* middle line */
+}
+
+  /* PAGE 1 HERO */
+  .page1 {
+    padding-top: 80px;
+    text-align: center;
+  }
+  .page1 h1,
+  .page1 h2 {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+    margin: 0.5em auto;
+    padding: 0 10px;
+  }
+.page1 video {
+  display: block;
+  width: 90%;           /* take most of screen width but leave some padding */
+  max-width: 340px;     /* cap the size so it's not too big */
+  height: auto;         /* keeps original proportions */
+  object-fit: contain;  /* shows the whole video without cropping */
+  margin: 3rem 0 5rem -10rem; /* top right bottom left — pushes slightly right from left edge */
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+
+  /* PAGE 2 */
+  .page2 {
+    padding: 50px 20px;
+  }
+  .page2-container {
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+  }
+  .page2-left,
+  .page2-right {
+    width: 100%;
+    text-align: center;
+  }
+  .page2-left h2 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+  .page2-right p {
+    font-size: 1rem;
+  }
+
+  /* PAGE 3 */
+  .page3 {
+    padding: 70px 30px;
+  }
+  .page3 h1 {
+    font-size: 5rem;
+    margin: 0 auto 5em;
+    text-align: center;
+  }
+  .page3-part1 {
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+  }
+  .page3-part1 img,
+  .page3-part1 video {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+  }
+
+  /* PAGE 4 */
+  .page4 {
+    padding: 50px 20px;
+  }
+  .elem {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .elem img {
+    position: static;
+    opacity: 1;
+    width: 100%;
+    max-width: 300px;
+    transform: none;
+  }
+  .text-div {
+    height: auto;
+    overflow: visible;
+    text-align: center;
+  }
+  .elem h1 {
+    font-size: 2rem;
+  }
+
+  /* PAGE 5 */
+  .page5 {
+    padding: 50px 20px;
+  }
+  .page5 h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+ .box {
+  flex-direction: column;
+  height: auto;
+  padding: 29px;
+  gap: 20px;
+  text-align: center;
+  margin: 3rem 0 5rem 0; /* normal */
+  margin-left: -2.5rem;  /* nudge left */
+}
+
+  html, body {
+  overflow-x: hidden;
+}
+/* Ensure page has no white background */
+html, body {
+  background: transparent !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* NAV */
+#nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  padding: 10px 20px;
+  position: relative;
+  background: transparent !important; /* force transparent header */
+}
+
+/* Logo inside nav */
+#nav img {
+  height: 40px;
+}
+
+/* Mobile dropdown menu */
+#nav-part2 {
+  display: none;
+  flex-direction: column;
+  background: rgba(0,0,0,0.85); /* dark dropdown */
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 10px 0;
+  width: 150px;
+  text-align: right;
+  z-index: 1000;
+}
+#nav-part2.show {
+  display: flex;
+}
+#nav-part2 h4 {
+  font-size: 14px;
+  padding: 8px 16px;
+  margin: 0;
+  cursor: pointer;
+  color: white;
+}
+/* ===== FORCE SOLID BLACK HEADER + WHITE 3-line HAMBURGER (MOBILE ONLY) ===== */
+#nav {
+  background: #000 !important;          /* solid black header */
+  mix-blend-mode: normal !important;    /* disable difference blending */
+  position: fixed;                      /* keep it pinned */
+  inset: 0 auto auto 0;                 /* top:0; left/right:auto to keep width */
+  z-index: 9999 !important;
+  padding: 12px 18px !important;
+  box-shadow: none !important;
+}
+
+/* make sure nav children don't create backgrounds */
+#nav, #nav * {
+  background: transparent !important;
+}
+
+/* logo sizing */
+#nav img {
+  height: 40px;
+  display: block;
+}
+
+/* dropdown (hidden by default) */
+#nav-part2 {
+  display: none;
+  flex-direction: column;
+  background: #0a0a0a !important;     /* dark dropdown for contrast */
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 18px;
+  border-radius: 10px;
+  padding: 8px 6px;
+  width: 170px;
+  text-align: right;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  z-index: 10001;
+}
+#nav-part2.show { display: flex !important; }
+#nav-part2 h4 {
+  color: #fff !important;
+  padding: 10px 14px;
+  margin: 0;
+  font-size: 14px;
+}
+
+/* hamburger container */
+#nav-part3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10002;
+}
+
+/* 3-line white hamburger */
+#circle {
+  width: 26px;
+  height: 3px;
+  background: #fff;           /* middle line */
+  position: relative;
+  border-radius: 2px;
+  display: inline-block;
+}
+#circle::before,
+#circle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 26px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+#circle::before { top: -8px; }
+#circle::after  { top: 8px;  }
+/* ===== PAGE 2 MOBILE COLORS ===== */
+.page2 > h1 {
+  color: #c8a2ff !important; /* light purple */
+}
+
+.page2-left h2,
+.page2-right p {
+  color: #fff !important; /* white */
+}
+
+/* Keep animations for .page2 text */
+.page2 * {
+  transition: unset !important;
+  transform: unset !important;
+}
+/* ===== PAGE 3 MOBILE COLORS ===== */
+.page3 > h1 {
+  color: #fff !important;
+}
+/* Captions below media — mobile only */
+.mobile-caption {
+  display: block;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 8px;
+  color: #ddd; /* light gray */
+}
+
+/* Hide captions on desktop */
+@media (min-width: 769px) {
+  .mobile-caption {
+    display: none;
+  }
+}
+/* Hide captions by default (desktop first) */
+.mobile-caption {
+  display: none;
+}
+
+/* Show captions only on mobile */
+@media (max-width: 768px) {
+  .mobile-caption {
+    display: block;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 8px;
+    color: #ddd; /* light gray */
+  }
+}
+/* Hide captions by default (desktop first) */
+.mobile-caption {
+  display: none;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .page3 {
+    padding: 20px;
+  }
+
+  .page3 h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    color: white; /* Keeps the header visible */
+  }
+
+  .page3-part1 {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 10px;
+  }
+
+  /* Scale down media for mobile */
+  .page3-part1 img,
+  .page3-part1 video {
+    width: 100%;
+    max-width: 350px; /* Prevents them from being too wide */
+    border-radius: 8px;
+  }
+
+  /* Show captions only on mobile */
+  .mobile-caption {
+    display: block;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 8px;
+    color: #ddd; /* Light gray */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Reduce space between name & Training Highlights on Page 3 */
+  .page3 h1 {
+    margin-bottom: 1.5em !important; /* was much larger before */
+  }
+
+  /* Reduce gap between Page 1 video & Page 2 start */
+  .page1 video {
+    margin-bottom: 2rem !important; /* was 5rem */
+  }
+}
+
+
+
+
+
+}
+
+
